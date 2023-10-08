@@ -14,10 +14,6 @@ class Counter extends Component{
         </div>
         );
     };
-    
-    //decrement = () => {}
-    //increment = () => {}
-
     formatCount(){
         return this.props.item.value === 0 ? <b>Zero</b> : this.props.item.value;
     }

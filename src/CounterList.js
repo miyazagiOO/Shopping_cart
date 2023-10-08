@@ -19,13 +19,11 @@ class CounterList extends Component{
                 <ul className="list-group list-group-flush">
                     <div className="d-inline-flex align-items-center mx-2">
                         <li className="list-group-item"> ราคารวมทั้งหมด : {this.getTotalPrice()}</li>
-
                         <button
                         onClick={this.resetButton}
-                        className="btn btn-sm btn-warning d-inline"
+                        className="btn btn-sm btn-danger d-inline"
                         > Reset </button>
                         </div> 
-                            
                         {this.state.itemlist.map((item) => (
                             <li className="list-group-item" key={item.id}>
                                 <Counter
@@ -40,19 +38,6 @@ class CounterList extends Component{
             </div>
         );
     }
-    
-
-
-    Increment = (item) => {
-        var _itemList = [...this.state.itemlist];
-        const indexItem = _itemList.indexOf(item);
-        _itemList[indexItem] = { ...item };
-        _itemList[indexItem].value++;
-        this.setState({ itemlist : _itemList });
-    }
-    
-
-
     getTotalPrice() {
         const totalPrice = this.state.itemlist
           .filter((item) => item.id >= 1 && item.id <= 4)
@@ -60,8 +45,6 @@ class CounterList extends Component{
     
         return totalPrice;
     }
-
-
     decrement = (item) => {
         var _itemList = [...this.state.itemlist];
         const indexItem = _itemList.indexOf(item);
@@ -71,7 +54,6 @@ class CounterList extends Component{
             this.setState({ itemlist: _itemList });
         }
     };
-
     resetButton = () => {
         var resetItem = this.state.itemlist.map((item) => { 
             item.value = 0; 
@@ -79,5 +61,13 @@ class CounterList extends Component{
         });
         this.setState({ resetItem });
     }
+    Increment = (item) => {
+        var _itemList = [...this.state.itemlist];
+        const indexItem = _itemList.indexOf(item);
+        _itemList[indexItem] = { ...item };
+        _itemList[indexItem].value++;
+        this.setState({ itemlist : _itemList });
+    }
 }
+
 export default CounterList;
