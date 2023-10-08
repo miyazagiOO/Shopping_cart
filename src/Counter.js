@@ -6,10 +6,10 @@ class Counter extends Component{
         <div className="d-block">
             <p className="d-inline m-2"><b>{this.props.item.itemname}</b> {this.formatCount()}</p>
             <button 
-                className="btn btn-primary btn-sm d-inline m-2"
+                className="button1"
                 onClick={() => this.props.onIncrement(this.props.item)}> + </button>
              <button 
-                className="btn btn-primary btn-sm d-inline m-2"
+                className="button1"
                 onClick={() => this.props.ondecrement(this.props.item)}> - </button>
         </div>
         );

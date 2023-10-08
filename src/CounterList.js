@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Counter from "./Counter";
+import './App.css';
 
 class CounterList extends Component{
     
@@ -21,7 +22,7 @@ class CounterList extends Component{
                         <li className="list-group-item"> ราคารวมทั้งหมด : {this.getTotalPrice()}</li>
                         <button
                         onClick={this.resetButton}
-                        className="btn btn-sm btn-danger d-inline"
+                        className="button"
                         > Reset </button>
                         </div> 
                         {this.state.itemlist.map((item) => (
